@@ -21,7 +21,7 @@ public:
 	{
 		ani_shake,//»Î¶¯
 		ani_cute,//ÂôÃÈ
-		ani_whiteEyw//°×ÑÛ
+		ani_whiteEye//°×ÑÛ
 	};
 public:
 	static smallStone * createStone(int row, int col);
