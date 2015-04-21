@@ -50,7 +50,7 @@ bool stoneMap::onTouchBegan(Touch * pTouch, Event * pEvent)
 		auto location = pTouch->getLocation();// this->convertTouchToNodeSpace(pTouch);
 		staSprite = spriteOfPoint(location);
 		if (staSprite)
-		staSprite->doAnimate(smallStone::stoneAnimateType::ani_shake);
+		staSprite->doAnimate(smallStone::stoneAnimateType::ani_cute);
 	}
 	return isTouchEnable;
 }

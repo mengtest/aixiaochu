@@ -41,8 +41,6 @@ void smallStone::doAnimate(stoneAnimateType type)
 			int offset = MAX_OFFSET;
 			float time = 0.08f;
 			auto size = this->getContentSize();
-			//size.width = 200;
-			//size.height = 200;
 
 			auto scaleX = (size.width + offset) / size.width;
 			auto scaleY = (size.height - offset) / size.height;
@@ -83,15 +81,21 @@ void smallStone::doAnimate(stoneAnimateType type)
 				break;
 			}
 			Vector<SpriteFrame*> frames;
-			for (int i = 0; i <= 4; i++)
+			for (int i = 1; i < 3; i++)
 			{
 				SpriteFrame * frame = SpriteFrameCache::getInstance()->getSpriteFrameByName(spriteNormal[_imgIndex][i]);
 				frames.pushBack(frame);
 			}
-			Animation * animation = Animation::createWithSpriteFrames(frames, 0.05f);
+			Animation * animation = Animation::createWithSpriteFrames(frames, 0.2f);
 			Animate * ani = Animate::create(animation);
-			ani->setTag(cute_tag);
-			this->runAction(ani);
+			
+			std::function<void()> call = [=](){
+				SpriteFrame * frame = SpriteFrameCache::getInstance()->getSpriteFrameByName(spriteNormal[_imgIndex][0]);
+				this->setSpriteFrame(frame);
+			};
+			Sequence * sq = Sequence::create(Repeat::create(ani, 3), CCCallFunc::create(call), nullptr);
+			sq->setTag(cute_tag);
+			this->runAction(sq);
 		}
 		break;
 	case smallStone::stoneAnimateType::ani_whiteEye:
@@ -102,7 +106,7 @@ void smallStone::doAnimate(stoneAnimateType type)
 				break;
 			}
 			SpriteFrame * frame = SpriteFrameCache::getInstance()->getSpriteFrameByName(spriteNormal[_imgIndex][4]);
-			this->setDisplayFrame(frame);
+			this->setSpriteFrame(frame);
 		}
 		break;
 	default:

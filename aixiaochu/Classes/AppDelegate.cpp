@@ -1,6 +1,6 @@
 #include "AppDelegate.h"
 #include "HelloWorldScene.h"
-
+#include "GameDefine.h"
 USING_NS_CC;
 
 AppDelegate::AppDelegate() {
@@ -33,6 +33,9 @@ bool AppDelegate::applicationDidFinishLaunching() {
 
     // turn on display FPS
     director->setDisplayStats(true);
+
+	glview->setFrameSize(GAME_SCREEN_WIDTH/2, GAME_SCREEN_HEIGHT/2);
+	glview->setDesignResolutionSize(GAME_SCREEN_WIDTH, GAME_SCREEN_HEIGHT, ResolutionPolicy::FIXED_WIDTH);
 
     // set FPS. the default value is 1.0/60 if you don't call this
     director->setAnimationInterval(1.0 / 60);

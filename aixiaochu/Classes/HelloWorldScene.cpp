@@ -1,4 +1,5 @@
 #include "HelloWorldScene.h"
+#include "stoneMap.h"
 
 USING_NS_CC;
 
@@ -83,7 +84,9 @@ void HelloWorld::menuCloseCallback(Ref* pSender)
     return;
 #endif
 
-    Director::getInstance()->end();
+    //Director::getInstance()->end();
+	auto scene = stoneMap::createScene();
+	Director::getInstance()->replaceScene(scene);
 
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
     exit(0);

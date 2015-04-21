@@ -6,19 +6,19 @@
 #define GAME_SCREEN_HEIGHT 800
 
 // 定义每个精灵大小与边框大小
-#define SPRITE_WIDTH 48
+#define SPRITE_WIDTH 88
 #define BOADER_WIDTH 2
 
 // 游戏精灵行数和列数
 #define ROWS 8
-#define COLS 8
+#define COLS 4
 
 // 精灵种类总数
 #define TOTAL_SPRITE 14
 #define SPRITE_KIND_NUM 5
 
 // 分数存储
-#define userDefault CCUserDefault::sharedUserDefault()
+#define userDefault UserDefault::getInstance()
 
 // 音乐音效
 #include "SimpleAudioEngine.h"

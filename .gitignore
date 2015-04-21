@@ -41,3 +41,8 @@ $RECYCLE.BIN/
 Network Trash Folder
 Temporary Items
 .apdisk
+aixiaochu/proj.win32/Debug.win32/sqlite3.dll
+*.obj
+*.lib
+*.dll
+aixiaochu/cocos2d/AUTHORS
